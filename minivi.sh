@@ -5,7 +5,8 @@ tar -xvf minivi.tar.xz -C $TMP/
 rm minivi.tar.xz
 sudo install -Dm755 $TMP/minivi /usr/bin/minivi
 rm $TMP/minivi
-sudo mv $TMP/minivi.png /usr/share/icons/hicolor/128x128/apps/minivi.png
-sudo mv $TMP/minivi.desktop /usr/share/applications/minivi.desktop
+sudo mv -f $TMP/minivi.png /usr/share/icons/hicolor/128x128/apps/minivi.png
+sudo mv -f $TMP/minivi.desktop /usr/share/applications/minivi.desktop
 echo ''
+rm minivi.sh
 echo 'Done.'
