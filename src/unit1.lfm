@@ -1,0 +1,50 @@
+object Form1: TForm1
+  Left = 904
+  Height = 240
+  Top = 484
+  Width = 320
+  AutoSize = True
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsToolWindow
+  Caption = 'minivi'
+  ClientHeight = 240
+  ClientWidth = 320
+  Color = clWindowText
+  DesignTimePPI = 120
+  KeyPreview = True
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  Position = poDesktopCenter
+  LCLVersion = '3.6.0.0'
+  object Image1: TImage
+    Left = 24
+    Height = 113
+    Top = 24
+    Width = 113
+    AutoSize = True
+    Center = True
+    ParentShowHint = False
+    Proportional = True
+    Visible = False
+  end
+  object BitBtn1: TBitBtn
+    Left = 165
+    Height = 38
+    Top = 46
+    Width = 123
+    Caption = 'Open Image'
+    Color = clBlack
+    Font.Color = clBlack
+    OnClick = BitBtn1Click
+    ParentFont = False
+    TabOrder = 0
+  end
+  object OpenPictureDialog1: TOpenPictureDialog
+    Left = 197
+    Top = 103
+  end
+  object PrintDialog1: TPrintDialog
+    Left = 168
+    Top = 16
+  end
+end
