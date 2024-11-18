@@ -54,7 +54,7 @@ begin
                    end;
       'MATE' :     RunCommand('gsettings set org.mate.desktop.background picture-uri file://'+GetEnvironmentVariable('HOME')+'/.config/background',_e);
       'CINNAMON' : RunCommand('gsettings set org.cinnamon.desktop.background picture-uri file://'+GetEnvironmentVariable('HOME')+'/.config/background',_e);
-      'XFCE' :     RunCommand('xfconf-query -c xfce4-desktop \ -p /backdrop/screen0/monitor1/workspace0/last-image \ -s '+GetEnvironmentVariable('HOME')+'/.config/background',_e);
+      'XFCE' :     Showmessage('Sorry, not supported yet!');
       'KDE' :      Showmessage('Sorry, not supported yet!');
     end;
    Except
@@ -65,9 +65,7 @@ end;
 
 procedure printing;
 var _printer: TPrinter;
-
 begin
- Showmessage('Sorry, not implemented yet!');
  { if form1.PrintDialog1.Execute then
      begin
      end;
@@ -128,9 +126,9 @@ begin
        load_picture(form1.OpenPictureDialog1.FileName);
   if ((ssctrl in shift) and (key = VK_P)) or (key = VK_P) then //printing picture
    printing;
-  if ((ssctrl in shift) and (key = VK_D)) or (key = VK_D) then //desktop picture
+  if key = VK_W then //desktop picture
    if MessageDlg('Question', 'Set background wallpaper?', mtConfirmation, [mbYes, mbNo],0) = mrYes then setwlp;
-  if (key = VK_DELETE) then //desktop picture
+  if (key = VK_DELETE) or (key = VK_D) then //desktop picture
    if MessageDlg('Question', 'Delete this picture?', mtConfirmation, [mbYes, mbNo],0) = mrYes then begin DeleteFile(form1.Caption); form1.Close; end;
   if key = VK_F1 then //help
    form2.ShowModal;

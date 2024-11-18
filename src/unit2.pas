@@ -16,6 +16,7 @@ type
     Label1: TLabel;
     Label2: TLabel;
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormShow(Sender: TObject);
     procedure Label2Click(Sender: TObject);
   private
 
@@ -35,6 +36,12 @@ procedure TForm2.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
 begin
     if (key = VK_ESCAPE) or (key = VK_Q) or ((ssctrl in shift) and (key = VK_Q)) then //close application
    form2.close;
+end;
+
+procedure TForm2.FormShow(Sender: TObject);
+begin
+  form2.Left:= (Screen.Width div 2)-(form2.Width div 2);
+  form2.Top:= (Screen.Height div 2)- (form2.Height div 2);
 end;
 
 procedure TForm2.Label2Click(Sender: TObject);

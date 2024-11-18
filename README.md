@@ -10,8 +10,8 @@ Functionality:
 
 - closing the application by pressing Esc / Q / Ctrl + Q
 - opening images, both when associating files and from the application by pressing Ctrl + O / O
-- setting an image as a desktop background by pressing Ctrl + D / D
-- deleting an image by pressing Del
+- setting an image as a desktop background by pressing W
+- deleting an image by pressing Del / D
 - calling help by pressing F1
 
 The application uses an icon (image) by the author **Cosmin Negoita** under the license **"Free for commercial use"**
@@ -35,8 +35,8 @@ wget -c "https://github.com/AlexanderShad/minivi/raw/main/minivi.sh" && sh miniv
 
 - закрытие приложение по клавишам Esc / Q / Ctrl + Q
 - открытие изображений, при ассоциации файлов, так и из приложения по клавишам Ctrl + O / O
-- установка изобрежения в качестве фона рабочего стола по клавишам Ctrl + D / D
-- удаление изображения по клавише Del
+- установка изобрежения в качестве фона рабочего стола по клавишам W
+- удаление изображения по клавише Del / D
 - вызов справки по клавише F1
 
 В приложении использована иконка (изображение) автора **"Cosmin Negoita"** под лицензией **"Free for commercial use"**
