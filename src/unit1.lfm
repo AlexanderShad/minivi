@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 904
+  Left = 493
   Height = 240
-  Top = 484
+  Top = 245
   Width = 320
   AutoSize = True
   BorderIcons = [biSystemMenu, biMinimize]
@@ -9,13 +9,13 @@ object Form1: TForm1
   Caption = 'minivi'
   ClientHeight = 240
   ClientWidth = 320
-  Color = clWindowText
+  Color = clBlack
   DesignTimePPI = 120
   KeyPreview = True
+  Position = poDesktopCenter
+  LCLVersion = '4.2.0.0'
   OnKeyDown = FormKeyDown
   OnShow = FormShow
-  Position = poDesktopCenter
-  LCLVersion = '3.6.0.0'
   object Image1: TImage
     Left = 24
     Height = 113
@@ -35,9 +35,9 @@ object Form1: TForm1
     Caption = 'Open Image'
     Color = clBlack
     Font.Color = clBlack
-    OnClick = BitBtn1Click
     ParentFont = False
     TabOrder = 0
+    OnClick = BitBtn1Click
   end
   object OpenPictureDialog1: TOpenPictureDialog
     Left = 197

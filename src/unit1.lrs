@@ -1,17 +1,17 @@
 { This is an automatically generated lazarus resource file }
 
 LazarusResources.Add('TForm1','FORMDATA',[
-  'TPF0'#6'TForm1'#5'Form1'#4'Left'#3#136#3#6'Height'#3#240#0#3'Top'#3#228#1#5
+  'TPF0'#6'TForm1'#5'Form1'#4'Left'#3#237#1#6'Height'#3#240#0#3'Top'#3#245#0#5
   +'Width'#3'@'#1#8'AutoSize'#9#11'BorderIcons'#11#12'biSystemMenu'#10'biMinimi'
   +'ze'#0#11'BorderStyle'#7#12'bsToolWindow'#7'Caption'#6#6'minivi'#12'ClientHe'
-  +'ight'#3#240#0#11'ClientWidth'#3'@'#1#5'Color'#7#12'clWindowText'#13'DesignT'
-  +'imePPI'#2'x'#10'KeyPreview'#9#9'OnKeyDown'#7#11'FormKeyDown'#6'OnShow'#7#8
-  +'FormShow'#8'Position'#7#15'poDesktopCenter'#10'LCLVersion'#6#7'3.6.0.0'#0#6
-  +'TImage'#6'Image1'#4'Left'#2#24#6'Height'#2'q'#3'Top'#2#24#5'Width'#2'q'#8'A'
-  +'utoSize'#9#6'Center'#9#14'ParentShowHint'#8#12'Proportional'#9#7'Visible'#8
-  +#0#0#7'TBitBtn'#7'BitBtn1'#4'Left'#3#165#0#6'Height'#2'&'#3'Top'#2'.'#5'Widt'
-  +'h'#2'{'#7'Caption'#6#10'Open Image'#5'Color'#7#7'clBlack'#10'Font.Color'#7#7
-  +'clBlack'#7'OnClick'#7#12'BitBtn1Click'#10'ParentFont'#8#8'TabOrder'#2#0#0#0
-  +#18'TOpenPictureDialog'#18'OpenPictureDialog1'#4'Left'#3#197#0#3'Top'#2'g'#0
-  +#0#12'TPrintDialog'#12'PrintDialog1'#4'Left'#3#168#0#3'Top'#2#16#0#0#0
+  +'ight'#3#240#0#11'ClientWidth'#3'@'#1#5'Color'#7#7'clBlack'#13'DesignTimePPI'
+  +#2'x'#10'KeyPreview'#9#8'Position'#7#15'poDesktopCenter'#10'LCLVersion'#6#7
+  +'4.2.0.0'#9'OnKeyDown'#7#11'FormKeyDown'#6'OnShow'#7#8'FormShow'#0#6'TImage'
+  +#6'Image1'#4'Left'#2#24#6'Height'#2'q'#3'Top'#2#24#5'Width'#2'q'#8'AutoSize'
+  +#9#6'Center'#9#14'ParentShowHint'#8#12'Proportional'#9#7'Visible'#8#0#0#7'TB'
+  +'itBtn'#7'BitBtn1'#4'Left'#3#165#0#6'Height'#2'&'#3'Top'#2'.'#5'Width'#2'{'#7
+  +'Caption'#6#10'Open Image'#5'Color'#7#7'clBlack'#10'Font.Color'#7#7'clBlack'
+  +#10'ParentFont'#8#8'TabOrder'#2#0#7'OnClick'#7#12'BitBtn1Click'#0#0#18'TOpen'
+  +'PictureDialog'#18'OpenPictureDialog1'#4'Left'#3#197#0#3'Top'#2'g'#0#0#12'TP'
+  +'rintDialog'#12'PrintDialog1'#4'Left'#3#168#0#3'Top'#2#16#0#0#0
 ]);

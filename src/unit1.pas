@@ -55,7 +55,7 @@ begin
       'MATE' :     RunCommand('gsettings set org.mate.desktop.background picture-uri file://'+GetEnvironmentVariable('HOME')+'/.config/background',_e);
       'CINNAMON' : RunCommand('gsettings set org.cinnamon.desktop.background picture-uri file://'+GetEnvironmentVariable('HOME')+'/.config/background',_e);
       'XFCE' :     Showmessage('Sorry, not supported yet!');
-      'KDE' :      Showmessage('Sorry, not supported yet!');
+      'plasma' :      Showmessage('Sorry, not supported yet!');
     end;
    Except
     showmessage(_e);
