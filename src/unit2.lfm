@@ -1,31 +1,30 @@
 object Form2: TForm2
   Left = 1273
-  Height = 290
+  Height = 232
   Top = 230
-  Width = 328
+  Width = 262
   BorderIcons = [biSystemMenu]
   BorderStyle = bsToolWindow
-  Caption = 'minivi v.0.9.0.3'
-  ClientHeight = 290
-  ClientWidth = 328
-  DesignTimePPI = 120
+  Caption = 'minivi v.0.9.1'
+  ClientHeight = 232
+  ClientWidth = 262
   Position = poScreenCenter
   LCLVersion = '4.2.0.0'
   OnKeyDown = FormKeyDown
   OnShow = FormShow
   object Label1: TLabel
-    Left = 8
-    Height = 162
+    Left = 6
+    Height = 135
     Top = 0
-    Width = 225
+    Width = 175
     Caption = 'Help page:'#10'---'#10'ESC, Q, Ctrl+Q - Close application'#10'---'#10'Crtl+O, O - Open wallpaper'#10'---'#10'W - Set background wallpaper'#10'---'#10'Del, D - Delete file'
   end
   object Label2: TLabel
     Cursor = crHandPoint
-    Left = 16
-    Height = 18
-    Top = 256
-    Width = 237
+    Left = 13
+    Height = 15
+    Top = 205
+    Width = 182
     Caption = 'https://github.com/AlexanderShad'
     Font.Color = clMenuHighlight
     ParentColor = False

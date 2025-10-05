@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, LResources, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  Buttons, ExtDlgs,LCLType, PrintersDlgs, printers, process,FileUtil;
+  Buttons, ExtDlgs,LCLType, PrintersDlgs, printers, process,FileUtil, IniFiles;
 
 type
 
@@ -41,21 +41,36 @@ implementation
 uses unit2;
 
 procedure setwlp;
-var _session,_e : string;
+var _session,_e,metka : string;
+    f : TIniFile;
 begin
   _session := GetEnvironmentVariable('XDG_SESSION_DESKTOP');
   Screen.Cursor := crHourGlass;
-  form1.Image1.Picture.SaveToFile(GetEnvironmentVariable('HOME')+'/.config/background');
+  metka := '';
+  if FileExists(GetEnvironmentVariable('HOME')+'/.config/minivi.cfg') then
+   begin
+     f := TIniFile.Create(GetEnvironmentVariable('HOME')+'/.config/minivi.cfg');
+     metka := f.ReadString('metka','id','');
+     if FileExists(GetEnvironmentVariable('HOME')+'/.config/background'+metka) then DeleteFile(GetEnvironmentVariable('HOME')+'/.config/background'+metka);
+     f.Free;
+   end
+  else
+   if FileExists(GetEnvironmentVariable('HOME')+'/.config/background') then DeleteFile(GetEnvironmentVariable('HOME')+'/.config/background');
+  metka := DateToStr(Date)+TimeToStr(Time);
+  f := TIniFile.Create(GetEnvironmentVariable('HOME')+'/.config/minivi.cfg');
+  f.WriteString('metka','id',metka);
+  f.Free;
+  form1.Image1.Picture.SaveToFile(GetEnvironmentVariable('HOME')+'/.config/background'+metka);
   try
     case UpperCase(_session) of
       'GNOME' :    begin
-                     RunCommand('gsettings set org.gnome.desktop.background picture-uri file://'+GetEnvironmentVariable('HOME')+'/.config/background',_e);
-                     RunCommand('gsettings set org.gnome.desktop.background picture-uri-dark file://'+GetEnvironmentVariable('HOME')+'/.config/background',_e);
+                     RunCommand('gsettings set org.gnome.desktop.background picture-uri file://'+GetEnvironmentVariable('HOME')+'/.config/background'+metka,_e);
+                     RunCommand('gsettings set org.gnome.desktop.background picture-uri-dark file://'+GetEnvironmentVariable('HOME')+'/.config/background'+metka,_e);
                    end;
-      'MATE' :     RunCommand('gsettings set org.mate.desktop.background picture-uri file://'+GetEnvironmentVariable('HOME')+'/.config/background',_e);
-      'CINNAMON' : RunCommand('gsettings set org.cinnamon.desktop.background picture-uri file://'+GetEnvironmentVariable('HOME')+'/.config/background',_e);
+      'MATE' :     RunCommand('gsettings set org.mate.desktop.background picture-uri file://'+GetEnvironmentVariable('HOME')+'/.config/background'+metka,_e);
+      'CINNAMON' : RunCommand('gsettings set org.cinnamon.desktop.background picture-uri file://'+GetEnvironmentVariable('HOME')+'/.config/background'+metka,_e);
       'XFCE' :     Showmessage('Sorry, not supported yet!');
-      'PLASMA' :      Showmessage('Sorry, not supported yet!');
+      'PLASMA' :   RunCommand('plasma-apply-wallpaperimage '+GetEnvironmentVariable('HOME')+'/.config/background'+metka,_e);
     end;
    Except
     showmessage(_e);
@@ -81,19 +96,24 @@ begin
    end;
   form1.Image1.Picture.Clear;
   form1.Image1.AutoSize:=true;
-  form1.Image1.Picture.LoadFromFile(x);
-  form1.Caption:=x;
-  if (form1.Image1.Picture.Height >= Screen.Height) or (form1.Image1.Picture.Width >= Screen.Width) then
-   begin
+  try
+    form1.Image1.Picture.LoadFromFile(x);
+    form1.Caption:=x;
+    if (form1.Image1.Picture.Height >= Screen.Height) or (form1.Image1.Picture.Width >= Screen.Width) then
+    begin
      form1.Image1.AutoSize:=false;
      form1.Image1.Height := Screen.Height-50;
      form1.Image1.Width := Screen.Width-50;
-   end;
-  form1.Left:= (Screen.Width div 2)-(form1.Image1.Width div 2);
-  form1.Top:= (Screen.Height div 2)- (form1.Image1.Height div 2);
-  form1.Width:=form1.Image1.Width;
-  form1.Height:=form1.Image1.Height;
-  form1.Image1.Hint:=form1.Caption;
+    end;
+    form1.Left:= (Screen.Width div 2)-(form1.Image1.Width div 2);
+    form1.Top:= (Screen.Height div 2)- (form1.Image1.Height div 2);
+    form1.Width:=form1.Image1.Width;
+    form1.Height:=form1.Image1.Height;
+    form1.Image1.Hint:=form1.Caption;
+  Except
+    ShowMessage('File upload error!');
+    form1.Close;
+  end;
 end;
 
 procedure TForm1.FormShow(Sender: TObject);
