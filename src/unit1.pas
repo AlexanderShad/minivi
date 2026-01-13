@@ -6,7 +6,8 @@ interface
 
 uses
   Classes, SysUtils, LResources, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  Buttons, ExtDlgs,LCLType, PrintersDlgs, printers, process,FileUtil, IniFiles;
+  Buttons, ExtDlgs, LCLType, PrintersDlgs, printers, StdCtrls, process,
+  FileUtil, IniFiles;
 
 type
 
@@ -15,6 +16,7 @@ type
   TForm1 = class(TForm)
     BitBtn1: TBitBtn;
     Image1: TImage;
+    Label1: TLabel;
     OpenPictureDialog1: TOpenPictureDialog;
     PrintDialog1: TPrintDialog;
     procedure BitBtn1Click(Sender: TObject);
@@ -31,14 +33,46 @@ var
 
 
 procedure load_picture(x : string);
-procedure printing;
 procedure setwlp;
+procedure move_picture(x : string);
 
 implementation
 
 { TForm1 }
 
 uses unit2;
+
+procedure move_picture(x : string);
+var path, _left, _right : string;
+    image_file : TStringList;
+    i : integer;
+begin
+  form1.Label1.Visible:=true;
+  path := ExtractFilePath(form1.Caption);
+  image_file := FindAllFiles(path, '*.png;*.xpm;*.bmp;*.cur;*.ico;*.icns;*.jpeg;*.jpg;*.jpe;*.jfif;*.tif;*.tiff;*.gif;*.pbm;*.pgm;*.ppm', false);
+  image_file.Sort;
+  _left := '1';
+  _right := '1';
+  for i := 0 to image_file.Count-1 do
+   begin
+     if image_file.Strings[i] = form1.Caption then
+      begin
+        if i-1 < 0 then _left := '';
+        if i+1 > image_file.Count-1 then _right := '';
+        if _left <> '' then _left := image_file.Strings[i-1];
+        if _right <> '' then _right := image_file.Strings[i+1];
+        if _left = '' then _left := image_file.Strings[image_file.Count-1];
+        if _right = '' then _right := image_file.Strings[0];
+        break;
+      end;
+     Application.ProcessMessages;
+   end;
+  case x of
+    'left': load_picture(_left);
+    'right': load_picture(_right);
+  end;
+    form1.Label1.Visible:=false;
+end;
 
 procedure setwlp;
 var _session,_e,metka : string;
@@ -76,15 +110,6 @@ begin
     showmessage(_e);
    end;
   Screen.Cursor := crDefault;
-end;
-
-procedure printing;
-var _printer: TPrinter;
-begin
- { if form1.PrintDialog1.Execute then
-     begin
-     end;
-  }
 end;
 
 procedure load_picture(x : string);
@@ -144,14 +169,16 @@ begin
   if ((ssctrl in shift) and (key = VK_O)) or (key = VK_O) then //loading new picture
     if form1.OpenPictureDialog1.Execute then
        load_picture(form1.OpenPictureDialog1.FileName);
-  if ((ssctrl in shift) and (key = VK_P)) or (key = VK_P) then //printing picture
-   printing;
   if key = VK_W then //desktop picture
    if MessageDlg('Question', 'Set background wallpaper?', mtConfirmation, [mbYes, mbNo],0) = mrYes then setwlp;
   if (key = VK_DELETE) or (key = VK_D) then //desktop picture
    if MessageDlg('Question', 'Delete this picture?', mtConfirmation, [mbYes, mbNo],0) = mrYes then begin DeleteFile(form1.Caption); form1.Close; end;
   if key = VK_F1 then //help
    form2.ShowModal;
+  if key = VK_RIGHT then //right image
+    move_picture('right');
+  if key = VK_LEFT then //left image
+    move_picture('left');
 end;
 
 initialization
