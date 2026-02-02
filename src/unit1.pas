@@ -130,18 +130,16 @@ begin
     if (form1.Image1.Picture.Height >= Screen.Height) or (form1.Image1.Picture.Width >= Screen.Width) then
      begin
       form1.Image1.AutoSize:=false;
-      form1.Image1.Height := Screen.Height-1;
       form1.Image1.Width := Screen.Width-1;
-     end
-    else
-     begin
-      form1.Image1.AutoSize:=true;
+      form1.Image1.Height := Screen.Height-1;
      end;
     form1.Left:= (Screen.Width div 2)-(form1.Image1.Width div 2);
-    form1.Top:= (Screen.Height div 2)- (form1.Image1.Height div 2);
+    form1.Top:= (Screen.Height div 2)-(form1.Image1.Height div 2);
     form1.Width:=form1.Image1.Width;
     form1.Height:=form1.Image1.Height;
     form1.Image1.Hint:=form1.Caption;
+    form1.Image1.Left:= (form1.Width div 2)-(form1.Image1.Width div 2);
+    form1.Image1.Top:= (form1.Height div 2)- (form1.Image1.Height div 2);
   Except
     ShowMessage('File upload error!');
     form1.Close;
@@ -199,6 +197,7 @@ procedure TForm1.FormResize(Sender: TObject);
 begin
   if tiling then
    begin
+    form1.Image1.AutoSize:=false;
     form1.Image1.Width:=form1.Width;
     form1.Image1.Height:=form1.Height;
    end;
