@@ -2,6 +2,11 @@
 
 **English**
 
+
+This project has been completely moved to
+https://altlinux.space/aleksandershad/minivi
+
+
 A small application for viewing images.
 
 Everything is minimalistic.
@@ -27,6 +32,11 @@ wget -c "https://github.com/AlexanderShad/minivi/raw/main/minivi.sh" && sh miniv
 ---
 
 **Русский**
+
+
+Этот проект полностью перенесен на
+https://altlinux.space/aleksandershad/minivi
+
 
 Небольшое приложение для просмотра изображений.
 
