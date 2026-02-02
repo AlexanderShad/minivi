@@ -6,15 +6,15 @@ LazarusResources.Add('TForm1','FORMDATA',[
   +#11'BorderStyle'#7#6'bsNone'#7'Caption'#6#6'minivi'#12'ClientHeight'#2#1#11
   +'ClientWidth'#3'@'#1#5'Color'#7#7'clBlack'#13'DesignTimePPI'#2'x'#10'KeyPrev'
   +'iew'#9#8'Position'#7#15'poDesktopCenter'#10'LCLVersion'#6#7'4.4.0.0'#9'OnKe'
-  +'yDown'#7#11'FormKeyDown'#6'OnShow'#7#8'FormShow'#0#6'TImage'#6'Image1'#4'Le'
-  +'ft'#2#24#6'Height'#2'q'#3'Top'#2#24#5'Width'#2'q'#8'AutoSize'#9#6'Center'#9
-  +#14'ParentShowHint'#8#12'Proportional'#9#7'Visible'#8#0#0#7'TBitBtn'#7'BitBt'
-  +'n1'#4'Left'#3#165#0#6'Height'#2'&'#3'Top'#2'.'#5'Width'#2'z'#7'Caption'#6#10
-  +'Open Image'#5'Color'#7#7'clBlack'#10'Font.Color'#7#7'clWhite'#10'ParentFont'
-  +#8#8'TabOrder'#2#0#7'OnClick'#7#12'BitBtn1Click'#0#0#6'TLabel'#6'Label1'#4'L'
-  +'eft'#2#0#6'Height'#2'A'#3'Top'#2#0#5'Width'#3#220#0#7'Caption'#6#10'Loading'
-  +'...'#5'Color'#7#7'clBlack'#10'Font.Color'#7#5'clRed'#11'Font.Height'#2#203
-  +#11'ParentColor'#8#10'ParentFont'#8#7'Visible'#8#0#0#18'TOpenPictureDialog'
-  +#18'OpenPictureDialog1'#4'Left'#3#198#0#3'Top'#2'g'#0#0#12'TPrintDialog'#12
-  +'PrintDialog1'#4'Left'#3#168#0#3'Top'#2#16#0#0#0
+  +'yDown'#7#11'FormKeyDown'#8'OnResize'#7#10'FormResize'#6'OnShow'#7#8'FormSho'
+  +'w'#0#6'TImage'#6'Image1'#4'Left'#2#24#6'Height'#2'q'#3'Top'#2#24#5'Width'#2
+  +'q'#8'AutoSize'#9#6'Center'#9#14'ParentShowHint'#8#12'Proportional'#9#7'Visi'
+  +'ble'#8#0#0#7'TBitBtn'#7'BitBtn1'#4'Left'#3#165#0#6'Height'#2'&'#3'Top'#2'.'
+  +#5'Width'#2'z'#7'Caption'#6#10'Open Image'#5'Color'#7#7'clBlack'#10'Font.Col'
+  +'or'#7#7'clWhite'#10'ParentFont'#8#8'TabOrder'#2#0#7'OnClick'#7#12'BitBtn1Cl'
+  +'ick'#0#0#6'TLabel'#6'Label1'#4'Left'#2#0#6'Height'#2'A'#3'Top'#2#0#5'Width'
+  +#3#220#0#7'Caption'#6#10'Loading...'#5'Color'#7#7'clBlack'#10'Font.Color'#7#5
+  +'clRed'#11'Font.Height'#2#203#11'ParentColor'#8#10'ParentFont'#8#7'Visible'#8
+  +#0#0#18'TOpenPictureDialog'#18'OpenPictureDialog1'#4'Left'#3#198#0#3'Top'#2
+  +'g'#0#0#12'TPrintDialog'#12'PrintDialog1'#4'Left'#3#168#0#3'Top'#2#16#0#0#0
 ]);

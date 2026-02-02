@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Installation script, requires sudo rights
-wget -c https://github.com/AlexanderShad/minivi/releases/download/0.10.1/minivi.tar.xz
+wget -c https://github.com/AlexanderShad/minivi/releases/download/0.10.2/minivi.tar.xz
 sudo tar -xvf minivi.tar.xz -C $TMP/
 rm minivi.tar.xz
 sudo install -Dm755 $TMP/minivi /usr/bin/minivi

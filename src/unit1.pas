@@ -21,6 +21,7 @@ type
     PrintDialog1: TPrintDialog;
     procedure BitBtn1Click(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormResize(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private
 
@@ -30,6 +31,7 @@ type
 
 var
   Form1: TForm1;
+  tiling : Boolean;
 
 
 procedure load_picture(x : string);
@@ -114,6 +116,7 @@ end;
 
 procedure load_picture(x : string);
 begin
+  tiling:=false;
   if form1.BitBtn1.Visible then
    begin
      form1.BitBtn1.Visible:=false;
@@ -143,6 +146,7 @@ begin
     ShowMessage('File upload error!');
     form1.Close;
   end;
+  tiling:=true;
 end;
 
 procedure TForm1.FormShow(Sender: TObject);
@@ -189,6 +193,15 @@ begin
     move_picture('right');
   if key = VK_LEFT then //left image
     move_picture('left');
+end;
+
+procedure TForm1.FormResize(Sender: TObject);
+begin
+  if tiling then
+   begin
+    form1.Image1.Width:=form1.Width;
+    form1.Image1.Height:=form1.Height;
+   end;
 end;
 
 initialization
