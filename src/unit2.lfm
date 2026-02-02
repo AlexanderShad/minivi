@@ -5,7 +5,7 @@ object Form2: TForm2
   Width = 333
   BorderIcons = [biSystemMenu]
   BorderStyle = bsToolWindow
-  Caption = 'minivi v.0.10.0'
+  Caption = 'minivi v.0.10.1'
   ClientHeight = 369
   ClientWidth = 333
   DesignTimePPI = 120

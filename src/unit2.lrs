@@ -3,7 +3,7 @@
 LazarusResources.Add('TForm2','FORMDATA',[
   'TPF0'#6'TForm2'#5'Form2'#4'Left'#3'3'#3#6'Height'#3'q'#1#3'Top'#3'o'#1#5'Wid'
   +'th'#3'M'#1#11'BorderIcons'#11#12'biSystemMenu'#0#11'BorderStyle'#7#12'bsToo'
-  +'lWindow'#7'Caption'#6#15'minivi v.0.10.0'#12'ClientHeight'#3'q'#1#11'Client'
+  +'lWindow'#7'Caption'#6#15'minivi v.0.10.1'#12'ClientHeight'#3'q'#1#11'Client'
   +'Width'#3'M'#1#13'DesignTimePPI'#2'x'#8'Position'#7#14'poScreenCenter'#10'LC'
   +'LVersion'#6#7'4.4.0.0'#9'OnKeyDown'#7#11'FormKeyDown'#6'OnShow'#7#8'FormSho'
   +'w'#0#6'TLabel'#6'Label1'#4'Left'#2#8#6'Height'#3'+'#1#3'Top'#2#0#5'Width'#3

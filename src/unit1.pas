@@ -71,7 +71,7 @@ begin
     'left': load_picture(_left);
     'right': load_picture(_right);
   end;
-    form1.Label1.Visible:=false;
+  form1.Label1.Visible:=false;
 end;
 
 procedure setwlp;
@@ -125,11 +125,15 @@ begin
     form1.Image1.Picture.LoadFromFile(x);
     form1.Caption:=x;
     if (form1.Image1.Picture.Height >= Screen.Height) or (form1.Image1.Picture.Width >= Screen.Width) then
-    begin
-     form1.Image1.AutoSize:=false;
-     form1.Image1.Height := Screen.Height-50;
-     form1.Image1.Width := Screen.Width-50;
-    end;
+     begin
+      form1.Image1.AutoSize:=false;
+      form1.Image1.Height := Screen.Height-1;
+      form1.Image1.Width := Screen.Width-1;
+     end
+    else
+     begin
+      form1.Image1.AutoSize:=true;
+     end;
     form1.Left:= (Screen.Width div 2)-(form1.Image1.Width div 2);
     form1.Top:= (Screen.Height div 2)- (form1.Image1.Height div 2);
     form1.Width:=form1.Image1.Width;
@@ -157,8 +161,10 @@ end;
 
 procedure TForm1.BitBtn1Click(Sender: TObject);
 begin
+  form1.Label1.Visible:=true;
   if form1.OpenPictureDialog1.Execute then //load picture from button
-   load_picture(form1.OpenPictureDialog1.FileName);
+    load_picture(form1.OpenPictureDialog1.FileName);
+  form1.Label1.Visible:=false;
 end;
 
 procedure TForm1.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
@@ -167,8 +173,12 @@ begin
   if (key = VK_ESCAPE) or (key = VK_Q) or ((ssctrl in shift) and (key = VK_Q)) then //close application
    form1.close;
   if ((ssctrl in shift) and (key = VK_O)) or (key = VK_O) then //loading new picture
+   begin
+    form1.Label1.Visible:=true;
     if form1.OpenPictureDialog1.Execute then
        load_picture(form1.OpenPictureDialog1.FileName);
+    form1.Label1.Visible:=false;
+   end;
   if key = VK_W then //desktop picture
    if MessageDlg('Question', 'Set background wallpaper?', mtConfirmation, [mbYes, mbNo],0) = mrYes then setwlp;
   if (key = VK_DELETE) or (key = VK_D) then //desktop picture

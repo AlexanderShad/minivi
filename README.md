@@ -13,6 +13,7 @@ Functionality:
 - setting an image as a desktop background by pressing W
 - deleting an image by pressing Del / D
 - calling help by pressing F1
+- switch images using arrows
 
 The application uses an icon (image) by the author **Cosmin Negoita** under the license **"Free for commercial use"**
 
@@ -38,6 +39,7 @@ wget -c "https://github.com/AlexanderShad/minivi/raw/main/minivi.sh" && sh miniv
 - установка изобрежения в качестве фона рабочего стола по клавишам W
 - удаление изображения по клавише Del / D
 - вызов справки по клавише F1
+- переключение изображения стрелками
 
 В приложении использована иконка (изображение) автора **"Cosmin Negoita"** под лицензией **"Free for commercial use"**
 

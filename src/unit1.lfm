@@ -1,13 +1,13 @@
 object Form1: TForm1
   Left = 493
-  Height = 240
+  Height = 1
   Top = 245
   Width = 320
   AutoSize = True
   BorderIcons = [biSystemMenu, biMinimize]
-  BorderStyle = bsToolWindow
+  BorderStyle = bsNone
   Caption = 'minivi'
-  ClientHeight = 240
+  ClientHeight = 1
   ClientWidth = 320
   Color = clBlack
   DesignTimePPI = 120
@@ -34,7 +34,7 @@ object Form1: TForm1
     Width = 122
     Caption = 'Open Image'
     Color = clBlack
-    Font.Color = clBlack
+    Font.Color = clWhite
     ParentFont = False
     TabOrder = 0
     OnClick = BitBtn1Click
