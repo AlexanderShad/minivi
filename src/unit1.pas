@@ -31,10 +31,10 @@ type
 
 var
   Form1: TForm1;
-  tiling : Boolean;
+  tiling, flag_try : Boolean;
 
 
-procedure load_picture(x : string);
+procedure load_picture(x : string; y : byte; z : string);
 procedure setwlp;
 procedure move_picture(x : string);
 
@@ -70,8 +70,8 @@ begin
      Application.ProcessMessages;
    end;
   case x of
-    'left': load_picture(_left);
-    'right': load_picture(_right);
+    'left': load_picture(_left,0,'');
+    'right': load_picture(_right,0,'');
   end;
   form1.Label1.Visible:=false;
 end;
@@ -114,7 +114,8 @@ begin
   Screen.Cursor := crDefault;
 end;
 
-procedure load_picture(x : string);
+procedure load_picture(x : string; y : byte; z : string);
+var _temp_name : string;
 begin
   tiling:=false;
   if form1.BitBtn1.Visible then
@@ -126,7 +127,7 @@ begin
   form1.Image1.AutoSize:=true;
   try
     form1.Image1.Picture.LoadFromFile(x);
-    form1.Caption:=x;
+    if y = 0 then form1.Caption:=x else form1.Caption:=z;
     if (form1.Image1.Picture.Height >= Screen.Height) or (form1.Image1.Picture.Width >= Screen.Width) then
      begin
       form1.Image1.AutoSize:=false;
@@ -140,9 +141,30 @@ begin
     form1.Image1.Hint:=form1.Caption;
     form1.Image1.Left:= (form1.Width div 2)-(form1.Image1.Width div 2);
     form1.Image1.Top:= (form1.Height div 2)- (form1.Image1.Height div 2);
+    if y = 1 then begin DeleteFile(x); flag_try := false; end;
   Except
-    ShowMessage('File upload error!');
-    form1.Close;
+    if flag_try then
+     begin
+       ShowMessage('File upload error!');
+       form1.Close;
+     end
+    else
+     begin
+       flag_try := true;
+       if ((UpperCase(ExtractFileExt(x)) = '.JPG') or (UpperCase(ExtractFileExt(x)) = '.JPEG')) then
+         _temp_name := ExtractFilePath(x)+ExtractFileName(x)+'.png';
+       if UpperCase(ExtractFileExt(x)) = '.PNG' then
+         _temp_name := ExtractFilePath(x)+ExtractFileName(x)+'.jpg';
+       if CopyFile(x,_temp_name) then
+         begin
+          load_picture(_temp_name,1,x);
+         end
+       else
+        begin
+          ShowMessage('File upload error!');
+          form1.Close;
+        end;
+     end;
   end;
   tiling:=true;
 end;
@@ -153,11 +175,12 @@ begin
   form1.Image1.Top:=0;
   form1.BitBtn1.Left:=0;
   form1.BitBtn1.Top:=0;
+  flag_try := false;
   if (paramcount >= 1) then
    begin
      form1.BitBtn1.Visible:=true;
      form1.Image1.Visible:=false;
-     load_picture(paramStr(1));
+     load_picture(paramStr(1),0,'');
    end;
 end;
 
@@ -165,7 +188,7 @@ procedure TForm1.BitBtn1Click(Sender: TObject);
 begin
   form1.Label1.Visible:=true;
   if form1.OpenPictureDialog1.Execute then //load picture from button
-    load_picture(form1.OpenPictureDialog1.FileName);
+    load_picture(form1.OpenPictureDialog1.FileName,0,'');
   form1.Label1.Visible:=false;
 end;
 
@@ -178,7 +201,7 @@ begin
    begin
     form1.Label1.Visible:=true;
     if form1.OpenPictureDialog1.Execute then
-       load_picture(form1.OpenPictureDialog1.FileName);
+       load_picture(form1.OpenPictureDialog1.FileName,0,'');
     form1.Label1.Visible:=false;
    end;
   if key = VK_W then //desktop picture
