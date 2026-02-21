@@ -5,7 +5,7 @@ object Form2: TForm2
   Width = 332
   BorderIcons = [biSystemMenu]
   BorderStyle = bsToolWindow
-  Caption = 'minivi v.0.10.4'
+  Caption = 'minivi v.0.10.5'
   ClientHeight = 369
   ClientWidth = 332
   DesignTimePPI = 120
@@ -25,8 +25,8 @@ object Form2: TForm2
     Left = 8
     Height = 23
     Top = 320
-    Width = 297
-    Caption = 'https://github.com/AlexanderShad'
+    Width = 287
+    Caption = 'https://altlinux.space/shad/minivi'
     Font.Color = clMenuHighlight
     ParentColor = False
     ParentFont = False

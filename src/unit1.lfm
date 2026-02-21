@@ -35,7 +35,7 @@ object Form1: TForm1
     Width = 122
     Caption = 'Open Image'
     Color = clBlack
-    Font.Color = clWhite
+    Font.Color = clBlack
     ParentFont = False
     TabOrder = 0
     OnClick = BitBtn1Click

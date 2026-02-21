@@ -46,7 +46,7 @@ end;
 
 procedure TForm2.Label2Click(Sender: TObject);
 begin
- Clipboard.AsText := 'https://github.com/AlexanderShad';
+ Clipboard.AsText := 'https://altlinux.space/shad/minivi';
  showmessage('Copied to clipboard.');
 end;
 

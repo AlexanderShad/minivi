@@ -51,7 +51,7 @@ var path, _left, _right : string;
 begin
   form1.Label1.Visible:=true;
   path := ExtractFilePath(form1.Caption);
-  image_file := FindAllFiles(path, '*.png;*.xpm;*.bmp;*.cur;*.ico;*.icns;*.jpeg;*.jpg;*.jpe;*.jfif;*.tif;*.tiff;*.gif;*.pbm;*.pgm;*.ppm', false);
+  image_file := FindAllFiles(path, '*.png;*.xpm;*.bmp;*.cur;*.ico;*.icns;*.jpeg;*.jpg;*.jpe;*.jfif;*.tif;*.tiff;*.gif;*.pbm;*.pgm;*.ppm;*.webp', false);
   image_file.Sort;
   _left := '1';
   _right := '1';
@@ -115,7 +115,7 @@ begin
 end;
 
 procedure load_picture(x : string; y : byte; z : string);
-var _temp_name : string;
+var _temp_name,_e : string;
 begin
   tiling:=false;
   if form1.BitBtn1.Visible then
@@ -145,25 +145,37 @@ begin
   Except
     if flag_try then
      begin
-       ShowMessage('File upload error!');
+       ShowMessage('File upload error -1!');
        form1.Close;
      end
     else
      begin
        flag_try := true;
        if ((UpperCase(ExtractFileExt(x)) = '.JPG') or (UpperCase(ExtractFileExt(x)) = '.JPEG')) then
-         _temp_name := ExtractFilePath(x)+ExtractFileName(x)+'.png';
+         _temp_name := x+'.png';
        if UpperCase(ExtractFileExt(x)) = '.PNG' then
-         _temp_name := ExtractFilePath(x)+ExtractFileName(x)+'.jpg';
-       if CopyFile(x,_temp_name) then
+         _temp_name := x+'.jpg';
+       if UpperCase(ExtractFileExt(x)) = '.WEBP' then
+        begin
+         _temp_name := x+'.png';
+         try
+          RunCommand('dwebp '+x+' -o '+_temp_name,_e);
+         Except
+          showmessage(_e);
+         end;
+        end;
+       if UpperCase(ExtractFileExt(x)) = '.WEBP' then
+        load_picture(_temp_name,1,x)
+       else
+        if CopyFile(x,_temp_name) then
          begin
           load_picture(_temp_name,1,x);
          end
-       else
-        begin
-          ShowMessage('File upload error!');
+        else
+         begin
+          ShowMessage('File upload error -2!');
           form1.Close;
-        end;
+         end;
      end;
   end;
   tiling:=true;

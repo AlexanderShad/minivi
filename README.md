@@ -2,11 +2,6 @@
 
 **English**
 
-
-This project has been completely moved to
-https://altlinux.space/aleksandershad/minivi
-
-
 A small application for viewing images.
 
 Everything is minimalistic.
@@ -20,23 +15,17 @@ Functionality:
 - calling help by pressing F1
 - switch images using arrows
 
+To support working with the webp format, **libwebp-tools** must be installed on the system.
+
+![Example of use in tiling and normal mode](https://altlinux.space/shad/minivi/src/branch/main/res/preview.mp4)
+
 The application uses an icon (image) by the author **Cosmin Negoita** under the license **"Free for commercial use"**
 
 [Source link](https://icon-icons.com/ru/%D0%B7%D0%BD%D0%B0%D1%87%D0%BE%D0%BA/%D0%96%D0%B8%D0%B2%D0%BE%D1%82%D0%BD%D1%8B%D0%B5-%D0%9A%D0%BE%D1%88%D0%BA%D0%B8/115224)
 
-You can install it on your system using a script, but you will need sudo rights
-
-```shell
-wget -c "https://github.com/AlexanderShad/minivi/raw/main/minivi.sh" && sh minivi.sh
-```
 ---
 
 **Русский**
-
-
-Этот проект полностью перенесен на
-https://altlinux.space/aleksandershad/minivi
-
 
 Небольшое приложение для просмотра изображений.
 
@@ -51,12 +40,10 @@ https://altlinux.space/aleksandershad/minivi
 - вызов справки по клавише F1
 - переключение изображения стрелками
 
+Для поддержки работы с форматом webp в системе должен быть установлен **libwebp-tools**
+
+![Пример использования в режиме tiling и обычном](https://altlinux.space/shad/minivi/src/branch/main/res/preview.mp4)
+
 В приложении использована иконка (изображение) автора **"Cosmin Negoita"** под лицензией **"Free for commercial use"**
 
 [Ссылка на источник](https://icon-icons.com/ru/%D0%B7%D0%BD%D0%B0%D1%87%D0%BE%D0%BA/%D0%96%D0%B8%D0%B2%D0%BE%D1%82%D0%BD%D1%8B%D0%B5-%D0%9A%D0%BE%D1%88%D0%BA%D0%B8/115224)
-
-Установить в свою систему можно скриптом, но потребуются права sudo 
-
-```shell
-wget -c "https://github.com/AlexanderShad/minivi/raw/main/minivi.sh" && sh minivi.sh
-```
