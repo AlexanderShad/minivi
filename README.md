@@ -1,5 +1,7 @@
 # minivi
 
+This project has been completely moved to https://altlinux.space/aleksandershad/minivi
+
 **English**
 
 A small application for viewing images.
@@ -17,7 +19,7 @@ Functionality:
 
 To support working with the webp format, **libwebp-tools** must be installed on the system.
 
-![Example of use in tiling and normal mode](https://altlinux.space/shad/minivi/src/branch/main/res/preview.mp4)
+![Example of use in tiling and normal mode](https://github.com/AlexanderShad/minivi/blob/main/res/preview.mp4)
 
 The application uses an icon (image) by the author **Cosmin Negoita** under the license **"Free for commercial use"**
 
@@ -26,6 +28,8 @@ The application uses an icon (image) by the author **Cosmin Negoita** under the 
 ---
 
 **Русский**
+
+Этот проект полностью перенесен на https://altlinux.space/aleksandershad/minivi
 
 Небольшое приложение для просмотра изображений.
 
@@ -42,7 +46,7 @@ The application uses an icon (image) by the author **Cosmin Negoita** under the 
 
 Для поддержки работы с форматом webp в системе должен быть установлен **libwebp-tools**
 
-![Пример использования в режиме tiling и обычном](https://altlinux.space/shad/minivi/src/branch/main/res/preview.mp4)
+![Пример использования в режиме tiling и обычном](https://github.com/AlexanderShad/minivi/blob/main/res/preview.mp4)
 
 В приложении использована иконка (изображение) автора **"Cosmin Negoita"** под лицензией **"Free for commercial use"**
 
