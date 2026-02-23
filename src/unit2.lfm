@@ -1,0 +1,37 @@
+object Form2: TForm2
+  Left = 819
+  Height = 355
+  Top = 367
+  Width = 266
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsToolWindow
+  Caption = 'minivi v.0.11.0'
+  ClientHeight = 355
+  ClientWidth = 266
+  Position = poScreenCenter
+  LCLVersion = '4.4.0.0'
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  object Label1: TLabel
+    Left = 6
+    Height = 323
+    Top = 0
+    Width = 251
+    Caption = 'Help page:'#10'---'#10'ESC, Q, Ctrl+Q - Close application'#10'---'#10'Crtl+O, O - Open wallpaper'#10'---'#10'W - Set background wallpaper'#10'---'#10'I - Image information'#10'---'#10'Del, D - Delete file'#10'---'#10'->,right mouse click - next image'#10'---'#10'<-,left mouse click - previous image'#10'---'#10'+/-,scroll mouse - zoom/unzoom'
+  end
+  object Label2: TLabel
+    Cursor = crHandPoint
+    Left = 6
+    Height = 19
+    Hint = 'Copy to clipboard'
+    Top = 328
+    Width = 233
+    Caption = 'https://altlinux.space/shad/minivi'
+    Font.Color = clMenuHighlight
+    ParentColor = False
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    OnClick = Label2Click
+  end
+end
