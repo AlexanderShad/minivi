@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=minivi
+Comment=A small application for viewing images.
+Comment[ru_RU]=Небольшое приложение для просмотра изображений.
+GenericName=Minimal Viewer
+GenericName[ru_RU]=Маленький просмотрощик
+Exec=minivi %u
+Terminal=false
+Type=Application
+Icon=minivi.png
+Categories=Graphics;2DGraphics;RasterGraphics;
+MimeType=image/bmp;image/gif;image/tiff;image/jpeg;image/png;image/x-icon;image/webp;image/x-webp;image/heif;image/heic;image/avif;image/jp2;image/svg;
+StartupNotify=true

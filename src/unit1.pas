@@ -95,7 +95,7 @@ var path, _left, _right : string;
 begin
   form1.Label1.Visible:=true;
   path := ExtractFilePath(form1.Caption);
-  image_file := FindAllFiles(path, '*.png;*.xpm;*.bmp;*.cur;*.ico;*.icns;*.jpeg;*.jpg;*.jpe;*.jfif;*.tif;*.tiff;*.gif;*.pbm;*.pgm;*.ppm;*.webp', false);
+  image_file := FindAllFiles(path, '*.png;*.xpm;*.bmp;*.cur;*.ico;*.icns;*.jpeg;*.jpg;*.jpe;*.jfif;*.tif;*.tiff;*.gif;*.pbm;*.pgm;*.ppm;*.webp;*.svg', false);
   image_file.Sort;
   _left := '1';
   _right := '1';
@@ -198,6 +198,7 @@ begin
          _temp_name := x+'.png';
        if UpperCase(ExtractFileExt(x)) = '.PNG' then
          _temp_name := x+'.jpg';
+       //--------------------------------------------
        if UpperCase(ExtractFileExt(x)) = '.WEBP' then
         begin
          _temp_name := x+'.png';
@@ -207,7 +208,18 @@ begin
           showmessage(_e);
          end;
         end;
-       if UpperCase(ExtractFileExt(x)) = '.WEBP' then
+       //--------------------------------------------
+       if UpperCase(ExtractFileExt(x)) = '.SVG' then
+        begin
+         _temp_name := x+'.png';
+         try
+          RunCommand('convert '+x+' '+_temp_name,_e);
+         Except
+          showmessage(_e);
+         end;
+        end;
+       //--------------------------------------------
+       if (UpperCase(ExtractFileExt(x)) = '.WEBP') or (UpperCase(ExtractFileExt(x)) = '.SVG') then
         load_picture(_temp_name,1,x)
        else
         if CopyFile(x,_temp_name) then

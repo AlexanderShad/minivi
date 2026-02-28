@@ -17,7 +17,31 @@ Functionality:
 - switch images using arrows or the right/left mouse button
 - zoom/unzoom using the mouse wheel, or +/- (may not work in tiling)
 
-To support working with the webp format, `libwebp-tools` must be installed on the system.
+# Installation
+
+Installation from repository:
+
+```sh
+apt-get update
+apt-get install minivi
+```
+
+Manual build and install:
+
+For build you need:
+- `lazarus`
+
+To support working with webp and svg formats, the system must have the following installed:
+
+- `libwebp-tools`
+- `ImageMagick-tools`
+
+Commands for build and install:
+
+```sh
+make build
+make install
+```
 
 [![Example of use in tiling and normal mode](./res/preview.webp)](./res/preview.mp4)
 

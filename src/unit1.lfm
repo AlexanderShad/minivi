@@ -12,7 +12,7 @@ object Form1: TForm1
   Color = clBlack
   KeyPreview = True
   Position = poDesktopCenter
-  LCLVersion = '4.4.0.0'
+  LCLVersion = '4.6.0.0'
   OnKeyDown = FormKeyDown
   OnResize = FormResize
   OnShow = FormShow
@@ -56,6 +56,7 @@ object Form1: TForm1
     Visible = False
   end
   object OpenPictureDialog1: TOpenPictureDialog
+    Filter = 'Графические файлы (*.png;*.xpm;*.bmp;*.cur;*.ico;*.icns;*.jpeg;*.jpg;*.jpe;*.jfif;*.tif;*.tiff;*.gif;*.pbm;*.pgm;*.ppm)|*.png;*.xpm;*.bmp;*.cur;*.ico;*.icns;*.jpeg;*.jpg;*.jpe;*.jfif;*.tif;*.tiff;*.gif;*.pbm;*.pgm;*.ppm;*.webp;*.svg|Файлы PNG (*.png)|*.png|Файлы Pixmap (*.xpm)|*.xpm|Файлы точечных рисунков (*.bmp)|*.bmp|Файлы курсоров (*.cur)|*.cur|Файлы значков (*.ico)|*.ico|Файлы значков macOS (*.icns)|*.icns|Файлы JPEG (*.jpeg;*.jpg;*.jpe;*.jfif)|*.jpeg;*.jpg;*.jpe;*.jfif|Файлы Tagged Image File Format (*.tif;*.tiff)|*.tif;*.tiff|Файлы Graphics Interchange Format (*.gif)|*.gif|Файлы Portable Pixmap (*.pbm;*.pgm;*.ppm)|*.pbm;*.pgm;*.ppm|WEBP|*.webp|SVG|*.svg|Все файлы (*)|*'
     Left = 158
     Top = 82
   end
