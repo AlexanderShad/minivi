@@ -1,6 +1,6 @@
 # minivi
 
-Этот проект полностью перенесен на https://altlinux.space/aleksandershad/minivi
+Этот проект полностью перенесен на https://altlinux.space/shad/minivi
 
 Небольшое приложение для просмотра изображений.
 
