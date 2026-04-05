@@ -1,6 +1,6 @@
 # minivi
 
-This project has been completely moved to https://altlinux.space/aleksandershad/minivi
+This project has been completely moved to https://altlinux.space/shad/minivi
 
 A small application for viewing images.
 
